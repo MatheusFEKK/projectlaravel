@@ -1,0 +1,15 @@
+:root {
+    --color-default: #000;
+}
+
+.navbar {
+    background-color: var(--color-default);
+}
+
+.home { 
+    height: 100vh !important;
+}
+
+.custom-tooltip{
+    --bs-tooltip-bg: var(--color-default);
+}
