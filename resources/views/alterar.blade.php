@@ -13,12 +13,12 @@
 </div>
 <div class="row">
     <div class="col-12 d-flex align-items-center flex-column p-5">
-        <form class="needs-validation" action="{{route('produto.adicionar')}}" method="post" enctype="multipart/form-data">
+        <form class="needs-validation" action="{{route('produto.atualizar', $produtos->id)}}" method="post" enctype="multipart/form-data">
             @csrf
 
                 <div class="mb-3" style="position: relative">
                     <label for="nomeProduto" class="form-label">Produto</label>
-                    <input class="form-control @if(old('nome'))  is-valid @endif @error('nome') is-invalid  @enderror" type="text" id="nomeProduto" name="nome" value="{{old('nome')}}">
+                    <input class="form-control @if(old('nome'))  is-valid @endif @error('nome') is-invalid  @enderror" type="text" id="nomeProduto" name="nome" value="<?=$produtos->nome?>">
                     @error('nome')
                         <div class="@error('nome') invalid-tooltip @else valid-tooltip @enderror">
                             {{$message}}
@@ -28,7 +28,7 @@
 
                 <div class="mb-3" style="position: relative">
                     <label for="descricaoProduto" class="form-label">Descrição</label>
-                    <input class="form-control @if (old('descricao')) is-valid @endif @error('descricao') is-invalid @enderror " type="text" id="descricaoProduto" name="descricao" value="{{old('descricao')}}">
+                    <input class="form-control @if (old('descricao')) is-valid @endif @error('descricao') is-invalid @enderror " type="text" id="descricaoProduto" name="descricao" value="<?=$produtos->descricao?>">
                     @error('descricao')
                         <div class="invalid-tooltip">
                             {{$message}}
@@ -39,7 +39,7 @@
 
                 <div class="mb-3" style="position: relative">
                     <label for="estoqueProduto" class="form-label">Preço</label>
-                    <input class="form-control @if (old('preco')) is-valid @endif @error('preco') is-invalid @enderror" type="text" id="estoqueProduto" name="preco" value="{{old('preco')}}">
+                    <input class="form-control @if (old('preco')) is-valid @endif @error('preco') is-invalid @enderror" type="text" id="estoqueProduto" name="preco" value="<?=$produtos->preco?>">
                     @error('preco')
                         <div class="invalid-tooltip">
                             {{$message}}
@@ -61,10 +61,20 @@
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary float-end" >Cadastrar</button>
                 </div>
-            @if(session('success'))
-                <p class="text-primary">{{session('success')}}</p>
-            @endif
         </form>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 @endsection

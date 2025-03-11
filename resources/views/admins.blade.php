@@ -25,6 +25,9 @@
                 <input class="form-control" type="text" placeholder="PESQUISAR" id="pesquisaProduto">
                 <button class="btn btn-primary float-end">Pesquisar</button>
             </div>
+            @if(session('success'))
+                <p class="text-primary text-center p-3">{{session('success')}}</p>
+            @endif
             <table class="table mt-5 pt-5">
                 <thead>
                     <tr>
@@ -41,7 +44,7 @@
                         <td>{{$produto->nome}}</td>
                         <td>{{$produto->descricao}}</td>
                         <td>
-                            <a class="btn btn-warning" href="{{route('produto.atualizar',$produto->id)}}">Editar</a>
+                            <a class="btn btn-warning" href="{{route('produto.alterar',[$produto->id])}}">Editar</a>
                             <a class="btn btn-danger" href="{{route('produto.excluir', $produto->id)}}">Deletar</a>
                         </td>
                     </tr>

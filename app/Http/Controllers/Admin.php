@@ -26,5 +26,7 @@ class Admin extends Controller
 
         return view('cadastrar', ['title' => $title]);
     }
+
+   
 }
 

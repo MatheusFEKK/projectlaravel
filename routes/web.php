@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\Home;
 use App\Http\Controllers\Produto;
+use App\Http\Controllers\User;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,10 +16,11 @@ Route::get('pesquisa', [Admin::class, 'pesquisa']);
 
 Route::post('adicionarProduto', [Produto::class, 'adicionarProduto'])->name('produto.adicionar');
 Route::get('excluirProduto/{id}', [Produto::class, 'excluirProduto'])->name('produto.excluir');
+Route::get('alterarProduto/{id}', [Produto::class, 'alterarProduto'])->name('produto.alterar');
 Route::post('atualizarProduto/{id}', [Produto::class, 'atualizarProduto'])->name('produto.atualizar');
 
 
-
+Route::get('carrinho', [User::class, 'carrinho']);
 
 
 

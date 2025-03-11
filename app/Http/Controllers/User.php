@@ -12,4 +12,11 @@ class User extends Controller
 
         return view ('pesquisa', ['title' => $title]);
     }
+
+    public function carrinho(Request $request)
+    {
+        $title = 'Carrinho - Loja';
+
+        return view ('carrinho', ['title' => $title]);
+    }
 }
