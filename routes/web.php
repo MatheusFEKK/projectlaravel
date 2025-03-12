@@ -21,6 +21,8 @@ Route::post('atualizarProduto/{id}', [Produto::class, 'atualizarProduto'])->name
 
 
 Route::get('carrinho', [User::class, 'carrinho']);
+Route::get('deslogar', [User::class, 'deslogar'])->name('usuario.deslogar');
+Route::get('logar', [User::class, 'logar'])->name('usuario.logar');
 
 
 
@@ -28,11 +30,7 @@ Route::get('carrinho', [User::class, 'carrinho']);
 
 
 
-
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [Home::class, 'Home'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

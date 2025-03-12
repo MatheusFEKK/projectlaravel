@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <button type="submit" class="btn btn-primary float-end" >Cadastrar</button>
+                    <button type="submit" class="btn btn-primary float-end" >Atualizar</button>
                 </div>
         </form>
     </div>
